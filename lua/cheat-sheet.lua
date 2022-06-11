@@ -148,6 +148,8 @@ function M.openPreview()
     return
   end
 
+  input_lines = input_lines:sub(1, -2):gsub(" ", "+")
+
   local search_fileType = input_lines:split("/")
   if #search_fileType > 1 then
     -- list all file types in array
