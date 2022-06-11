@@ -148,7 +148,10 @@ function M.openPreview()
     return
   end
 
-  input_lines = input_lines:sub(1, -2):gsub(" ", "+")
+  input_lines = input_lines:gsub(" ", "+")
+  if input_lines:sub(-1) == "+" then
+    input_lines = input_lines:sub(1, -2)
+  end
 
   local search_fileType = input_lines:split("/")
   if #search_fileType > 1 then
